@@ -1,10 +1,10 @@
 ---
 layout: layouts/post.njk
-title: About Me
+title: О проекте 
 templateClass: tmpl-post
 eleventyNavigation:
-  key: About Me
+  key: О проекте 
   order: 3
 ---
 
-I am a person that writes stuff.
+БазАрр — это магазин приложений для смартфонов и компьтеров, расширений для браузеров, интересных сайтов и многое другое. Пишите гайды, выкладывайте свежие версии приложений, делитесь своими модами через GitHub и вы получите упоминание. Сделаем отношения с техникой проще!
