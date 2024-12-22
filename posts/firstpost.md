@@ -2,6 +2,7 @@
 title: Это мой 1-й пост.
 description: This is a post on My Blog about agile frameworks.
 date: 2024-05-01
+author: "user123"
 tags:
   -  Другой тег
 layout: layouts/post.njk

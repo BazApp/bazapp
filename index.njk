@@ -3,12 +3,43 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Главная
   order: 1
+title: БазАрр
+author: user123
 ---
+
 {% set maxPosts = collections.posts.length | min(3) %}
-<h1>Посследние посты ({% if maxPosts == 1 %}Post{% else %}{{ maxPosts }}) {% endif %}</h1>
+<h1>Последние посты ({% if maxPosts == 1 %}Post{% else %}{{ maxPosts }}{% endif %})</h1>
 
 {% set postslist = collections.posts | head(-3) %}
 {% set postslistCounter = collections.posts | length %}
 {% include "postslist.njk" %}
 
 <p>Больше постов <a href="{{ '/posts/' | url }}">в архиве</a>.</p>
+
+<h1>Информация о авторе: 
+  {% if collections.authors[author] %}
+    {{ collections.authors[author].fullName }}
+  {% else %}
+    Автор не найден
+  {% endif %}
+</h1>
+
+{% if collections.authors[author] %}
+  <img src="{{ collections.authors[author].avatar }}" alt="Avatar of {{ collections.authors[author].username }}">
+  <p>Город: {{ collections.authors[author].city }}</p>
+  <p>Возраст: {{ collections.authors[author].age }} лет</p>
+  <p>Устройства: 
+    {% if collections.authors[author].devices %}
+      {{ collections.authors[author].devices | join(", ") }}
+    {% else %}
+      Устройства не указаны
+    {% endif %}
+  </p>
+  <div class="social-links">
+    <a href="{{ collections.authors[author].socialLinks.vk }}">ВКонтакте</a>
+    <a href="{{ collections.authors[author].socialLinks.telegram }}">Telegram</a>
+    <a href="{{ collections.authors[author].socialLinks.twitter }}">Twitter</a>
+  </div>
+{% else %}
+  <p>Информация о авторе не найдена.</p>
+{% endif %}

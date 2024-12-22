@@ -1,0 +1,31 @@
+[
+      {
+         "id": "user123",
+         "username": "@user123",
+         "fullName": "Иван Иванов",
+         "avatar": "/avatars/user123.png",
+         "city": "Москва",
+         "devices": ["Android", "Windows"],
+         "age": 25,
+         "socialLinks": {
+            "vk": "https://vk.com/user123",
+            "telegram": "https://t.me/user123",
+            "twitter": "https://twitter.com/user123"
+         }
+      },
+      {
+         "id": "user456",
+         "username": "@user456",
+         "fullName": "Мария Смирнова",
+         "avatar": "/avatars/user456.png",
+         "city": "Санкт-Петербург",
+         "devices": ["iOS", "MacOS"],
+         "age": 30,
+         "socialLinks": {
+            "vk": "https://vk.com/user456",
+            "telegram": "https://t.me/user456",
+            "twitter": "https://twitter.com/user456"
+         }
+      }
+   ]
+

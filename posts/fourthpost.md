@@ -2,6 +2,7 @@
 title: Это мой 4-й пост.
 description: This is a post on My Blog about touchpoints and circling wagons.
 date: 2024-09-30
+author: "user123"
 tags: браузер
 layout: layouts/post.njk
 ---

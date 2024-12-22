@@ -2,6 +2,7 @@
 title: Это мой 3-й пост.
 description: This is a post on My Blog about win-win survival strategies.
 date: 2024-08-24
+author: "user123"
 tags:
   - браузер 
   - macos

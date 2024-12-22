@@ -5,6 +5,9 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+// Дата на русском
+const { format } = require('date-fns');
+const { ru } = require('date-fns/locale');
 
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
@@ -93,6 +96,11 @@ module.exports = function(eleventyConfig) {
     },
     ui: false,
     ghostMode: false
+  });
+
+  // Добавляем фильтр для форматирования дат
+  eleventyConfig.addFilter("localizedDate", (date) => {
+    return format(new Date(date), 'd MMMM yyyy', { locale: ru });
   });
 
   return {
