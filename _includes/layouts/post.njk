@@ -2,14 +2,59 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
+<div class="main-card">
+  <div class="main-card__logo">
+    <img
+      src="https://static.rustore.ru/imgproxy/ZrhDbi6fDJMBrhX9UW-gx1AT3U8MqZS1DfFBPjFmdYA/preset:app_card_icon/aHR0cHM6Ly9zdGF0aWMucnVzdG9yZS5ydS9hcGsvNTc5MDA3L2NvbnRlbnQvSUNPTi81OWY0ZjM5OC1jYTBjLTQ4NWQtYTJiMy1iZjdjYmI1M2VhZGIucG5n.webp"
+      alt="Лого - {{ title }}"
+    />  
+  </div>
 
-<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-{%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
+  <div class="main-card__info">
+    <small class="author-post">
+      <a href="#">{{ author }}</a>
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+    </small>
 
+    <h2>{{ title }}</h2>
+    <p class="description">{{ description }}</p>
+    <a class="developer" href="#">{{ developer }}</a>
+
+    <span class="age">
+      {{ age, 0 }}+
+    </span>
+    {%- for tag in tags | filterTagList -%}
+    {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+    {%- endfor %}
+
+  </div>
+</div>
+    
+<div class="links-downloads">
+  <button class="btn btn-primary"> Скачать </button>
+
+  <div class="links-downloads__list">
+    <a class="btn btn-logo"> 
+      {{ stores["_4pda"] }} 
+    </a>
+    <a class="btn btn-logo"> App Store </a>
+    <a class="btn btn-logo"> Microdoft Store </a>
+    <a class="btn btn-logo"> RuStore </a>
+  </div>
+
+  <div class="platforms__list">
+    <span class="btn btn-logo"> Android </span>
+    <span class="btn btn-logo"> iOS </span>
+    <span class="btn btn-logo"> Windows </span>
+    <span class="btn btn-logo"> MacOS </span>
+    <span class="btn btn-logo"> Linux </span>
+  </div>
+</div>
+
+<h3>Скриншоты</h3>
+
+<h3>Описание</h3>
 {{ content | safe }}
 
 {%- if collections.posts %}

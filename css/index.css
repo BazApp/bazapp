@@ -5,11 +5,11 @@
 :root {
    --lightgray: #e0e0e0;
    --gray: #393939;
-   --darkgray: #8F8F8F;
-   --navy: #DD1212;
-   --blue: #DD1212;
-   --white: #F2F2F2;
-   --black: #1E1E1E;
+   --darkgray: #8f8f8f;
+   --primary: #dd1212;
+   --blue: #dd1212;
+   --white: #f2f2f2;
+   --black: #1e1e1e;
 }
 
 /* Global stylesheet */
@@ -26,11 +26,26 @@ body {
    background-color: var(--black);
    font-family: ;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
    color: var(--white);
+}
+h2 {
+   font-size: 24px;
+   font-weight: 600;
+   margin: 8px 0 3px;
 }
 p:last-child {
    margin-bottom: 0;
+}
+p.description {
+   font-size: 16px;
+   line-height: 16px;
+   margin: 0;
 }
 p,
 .tmpl-post li,
@@ -41,11 +56,25 @@ p,
 .tmpl-post li {
    line-height: 1.45;
 }
+a.developer {
+   font-size: 18px;
+   font-weight: 500;
+   margin: 6px 0 4px;
+   display: block;
+}
 a[href] {
    color: var(--blue);
+   text-decoration: none;
 }
 a[href]:visited {
-   color: var(--navy);
+   color: var(--primary);
+}
+small {
+   font-size: 12px;
+}
+.author-post {
+   display: flex;
+   gap: 5px;
 }
 main {
    padding: 1rem;
@@ -67,6 +96,18 @@ table {
 table td,
 table th {
    padding-right: 1em;
+}
+
+span.age {
+   color: #9b9b9b;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   border: 1px solid #464646;
+   border-radius: 4px;
+   padding: 1px 1px 1px 5px;
+   text-align: center;
 }
 
 pre,
@@ -210,8 +251,8 @@ code {
    /* text-transform: uppercase; */
    font-size: 14px; /* 12px /16 */
    padding: 2px 12px; /* 1px 4px /12 */
-   margin-left: 0.6666666666667em; /* 8px /12 */
-   margin-top: 0.5em; /* 6px /12 */
+   margin-left: 8px; /* 8px /12 */
+   /* margin-top: 0.5em; 6px /12 */
    margin-bottom: 0.5em; /* 6px /12 */
    color: var(--darkgray);
    border: 1px solid var(--gray);
@@ -226,7 +267,7 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-   background-color:  var(--gray);
+   background-color: var(--gray);
 }
 .postlist-item > .post-tag {
    align-self: center;
@@ -257,4 +298,64 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
    color: #aaa;
+}
+
+/* Buttons */
+.btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   font-family: Inter;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   cursor: pointer;
+   border: none;
+}
+
+.btn-primary {
+   padding: 10px 103px;
+   height: 52px;
+   width: 220px;
+   font-size: 18px;
+   color: #fff;
+   border: 1px solid var(--primary);
+   border-radius: 16px;
+   background: linear-gradient(
+         0deg,
+         rgba(255, 255, 255, 0.1) 0%,
+         rgba(255, 255, 255, 0.1) 100%
+      ),
+      var(--primary);
+}
+
+.links-downloads {
+   display: flex;
+   gap: 18px;
+}
+
+.main-card {
+   display: flex;
+   gap: 24px;
+   margin-bottom: 32px;
+}
+
+.main-card__logo {
+   display: flex;
+   min-width: 160px;
+   max-width: 160px;
+   height: 160px;
+   padding: 8px;
+   align-items: flex-start;
+   gap: 10px;
+   border-radius: 32px;
+   border: 1px solid #323232;
+   background: #232323;
+   overflow: hidden;
+}
+
+.main-card__logo img {
+   border-radius: 24px;
+   height: 100%;
 }
